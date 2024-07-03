@@ -1,6 +1,11 @@
 from django.contrib import admin
-from .models import Contact,Category,Blog
+from .models import Blog, Category, Contact
 
-# Register your models here.
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'author', 'create_date',)
+    prepopulated_fields = {'slug': ('title',)}
 
-admin.site.register((Contact,Category,Blog)) 
+admin.site.register(Blog, BlogAdmin)
+admin.site.register(Category)
+admin.site.register(Contact)
+

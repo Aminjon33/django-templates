@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Contact,Blog,Category
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-def blog_detail_view(request,id):
-    blog = Blog.objects.get(id=id)
+def blog_detail_view(request,slug):
+    blog = get_object_or_404(Blog, slug=slug)
     context = {"blog":blog}
     return render(request, 'publication.html',context)
 

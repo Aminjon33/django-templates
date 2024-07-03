@@ -215,7 +215,7 @@
 
                                 <a href="publication.html" class="mil-blog-card mil-mb-60">
                                     <div class="mil-cover-frame mil-up">
-                                        <img src="img/blog/1.jpg" alt="cover">
+                                        <img src="{% static 'img/blog/1.jpg'%}" alt="cover">
                                     </div>
                                     <div class="mil-post-descr">
                                         <div class="mil-labels mil-up mil-mb-30">
@@ -235,7 +235,7 @@
 
                                 <a href="publication.html" class="mil-blog-card mil-mb-60">
                                     <div class="mil-cover-frame mil-up">
-                                        <img src="img/blog/2.jpg" alt="cover">
+                                        <img src="{% static 'img/blog/2.jpg'%}" alt="cover">
                                     </div>
                                     <div class="mil-post-descr">
                                         <div class="mil-labels mil-up mil-mb-30">
@@ -279,7 +279,7 @@
                         <div class="row">
                             {% for blog in blogs %}
                             <div class="col-lg-12">
-                                <a href="{% url 'blog-detail-page' blog.id %}" class="mil-blog-card mil-blog-card-hori mil-more mil-mb-60">
+                                <a href="{% url 'blog-detail-page' blog.slug %}" class="mil-blog-card mil-blog-card-hori mil-more mil-mb-60">
                                     <div class="mil-cover-frame mil-up">
                                         <img src="{{blog.image.url}}" alt="cover">
                                     </div>
