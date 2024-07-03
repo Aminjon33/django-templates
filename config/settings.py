@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'portfolio',
     'ckeditor',
+    'hitcount',
 ]
 
 MIDDLEWARE = [
